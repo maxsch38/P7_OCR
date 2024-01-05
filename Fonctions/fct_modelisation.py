@@ -6,9 +6,6 @@
 ## 1. Importation des librairies :
 
 import numpy as np
-import pandas as pd 
-import matplotlib.pyplot as plt 
-import seaborn as sns
 import warnings
 
 # Scikit-learn : 
@@ -30,7 +27,6 @@ from functools import partial
 
 warnings.filterwarnings('ignore', category=FutureWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
-
 
 ###########################################################################################################################
 # 1. Prespocessing de data : 
