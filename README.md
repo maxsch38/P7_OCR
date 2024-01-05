@@ -1,16 +1,32 @@
-# Projet 7 OpenClassRooms : Implémentez un modèle de scoring.
+# Projet 7 - OpenClassRooms : IMPLEMENTEZ UN MODELE DE SCORING
 
-## Objectifs
+<u>*Auteur : Maxime SCHRODER*</u>
 
-1. Modèle de Scoring : Construire un modèle de scoring pour prédire la probabilité de faillite d'un client.
-2. Dashboard Interactif : Développer un dashboard interactif pour interpréter les prédictions du modèle et améliorer la connaissance client.
-3. Mise en Production : Mettre en production le modèle de scoring via une API et le dashboard interactif.
+## Contexte
+
+<p align="center">
+  <img src="Logo_pret_a_depenser.png" alt="Logo projet">
+</p>
+
+Vous êtes Data Scientist au sein d'une société financière, nommée "Prêt à dépenser", qui propose des crédits à la consommation pour des personnes ayant peu ou pas du tout d'historique de prêt. L’entreprise souhaite mettre en œuvre un outil de “scoring crédit” pour calculer la probabilité qu’un client rembourse son crédit, puis classifie la demande en crédit accordé ou refusé. Elle souhaite donc développer un algorithme de classification en s’appuyant sur des sources de données variées (données comportementales, données provenant d'autres institutions financières, etc.). De plus, les chargés de relation client ont fait remonter le fait que les clients sont de plus en plus demandeurs de transparence vis-à-vis des décisions d’octroi de crédit. Cette demande de transparence des clients va tout à fait dans le sens des valeurs que l’entreprise veut incarner. Prêt à dépenser décide donc de développer un dashboard interactif pour que les chargés de relation client puissent à la fois expliquer de façon la plus transparente possible les décisions d’octroi de crédit, mais également permettre à leurs clients de disposer de leurs informations personnelles et de les explorer facilement.
+
+## Données
+
+Les données sont issues de Kaggle et sont disponibles à l'adresse suivante : https://www.kaggle.com/c/home-credit-default-risk/data
+
+## Mission
+
+1. Construire un modèle de scoring pour prédire la probabilité de faillite d'un client.
+2. Développer un dashboard interactif pour interpréter les prédictions du modèle et améliorer la connaissance client.
+3. Mettre en production le modèle de scoring via une API et le dashboard interactif.
    
 ## Construction
 
 Dans ce dépôt, vous trouverez :
+1. Le notebbok comprtant l'analyse exploratoire des données, la création de features engineering et la sélection de features : Notebook_1_analyse_exploratoire.ipynb
 
-1. un Notebook nommé '1. P7 - Analyse Exploratoire' : pour l'études des données, le feature engineering, et la selection de features.
+
+
 2. un fichier python nommé 'fct_data' : fichier contenant les fonctiond utilisées pour le notebook Analyse Exploratoire.
 3. un Notebook nommé : 2. P7 - Modélisation' : pour l'entrainement, l'optimisation des hyperparamètres et la sélection du modèle à retenir pour l'étude.
 4. un fichier python nommé 'fct_modelisation' : fichier contenant les fonctions utilisées pour le notebook Modélisation.
