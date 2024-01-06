@@ -38,22 +38,21 @@ Dans ce dépôt, vous trouverez :
   - le script d'execution : Datadrift.py
   - l'image de l'executiob du script : Image_execution_script.png
   - le rapport de datadrift entre l'ensemble d'entrainement et de test : Data_Drift_Report.html
+7. Un rapport décrivant les différents points abordés dans ce projet : Note méthodologique.pdf
+8. Le support de présentation : Présentation.pdf
+9. Le fichier de dépendance : pyproject.toml
 
-
-
-8. Un PDF nommé 'Note Méthodologique' : rapport décrivant les différents points abordés dans ce projet.
 
 ## API en prodution : 
 
 l'API en production est réalisée à partir de deux répertoires GitHub distincts :
-   - [Backend avec FastAPI](https://github.com/maxsch38/API_backend_P7)
-   - [Frontend avec Streamlit](https://github.com/maxsch38/API_Frontend_P7)
+   - [Backend avec FastAPI](https://github.com/maxsch38/P7_OCR_API_Backend)
+   - [Frontend avec Streamlit](https://github.com/maxsch38/P7_OCR_API_Frontend)
 
 [API Deployée](https://apiocrp7maxsch-d299d2d6fa81.herokuapp.com)
+*Pour des raison de coût, cette API n'est plus active*
 
 ## Autres informations : 
-
-Lien de téléchargement des données d'entrées : [lien](https://www.kaggle.com/c/home-credit-default-risk/data)
 
 La partie features engineering n'étant pas la partie la plus importante de ce projet, il nous était proposé d'utiliser des Notebooks disponiblent sur le site de Kaggle,
 Notebooks utilisés pour l'Analyse exploratoire : 
