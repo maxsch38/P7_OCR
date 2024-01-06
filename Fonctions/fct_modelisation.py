@@ -94,27 +94,22 @@ def preprocess_data(data, reduce_fraction=None):
 ###########################################################################################################################
 # 2. Optimisation des hyperparamètres Hyperopt et Trackage avec MLFlow : 
 
-def search_best_model(data, dict_model, run_name=None, reduction_percentage=None, max_evals=10):
+def search_best_model(X_train, X_test, y_train, y_test, dict_model, run_name=None, max_evals=10):
     """
     Optimise les hyperparamètres d'un modèle d'apprentissage automatique avec Hyperopt
     et enregistre les résultats avec MLflow.
 
     Args:
-    - data (pandas.DataFrame): Le jeu de données d'entraînement.
+    - X_train (array-like): Les caractéristiques du jeu de données d'entraînement.
+    - X_test (array-like): Les caractéristiques du jeu de données de test.
+    - y_train (array-like): Les étiquettes du jeu de données d'entraînement.
+    - y_test (array-like): Les étiquettes du jeu de données de test.
     - dict_model (dict): Un dictionnaire contenant des informations sur le modèle d'apprentissage automatique à optimiser.
         - 'model' (object): Une instance du modèle scikit-learn à optimiser.
         - 'space' (dict): L'espace de recherche des hyperparamètres défini avec Hyperopt.
     - run_name (str, optional): Le nom à associer à l'exécution MLflow. Par défaut, None.
-    - reduction_percentage (float, optional): Le pourcentage de données à utiliser pour l'optimisation. Par défaut, None.
     - max_evals (int, optional): Le nombre maximal d'évaluations pour l'optimisation des hyperparamètres. Par défaut, 10.
-
     """
-    
-    # Pre_processiong de data : 
-    X_train, X_test, y_train, y_test = preprocess_data(
-        data=data,
-        reduce_fraction=reduction_percentage
-        )
         
     # Création de trials pour récupérer l'ensemble des résultats d'optimisation : 
     trials = Trials()
@@ -229,6 +224,7 @@ def objective(params, X, y, model):
 def score_metier(y_true, y_prob, threshold):
     """
      Calcule le score métier en fonction des prédictions probabilistes d'un modèle.
+     Le calcul se basant sur le f1_beta_score.
 
     Args:
         y_true (array-like): Les vraies étiquettes.
@@ -238,9 +234,7 @@ def score_metier(y_true, y_prob, threshold):
     Returns:
         float: Le coût total basé sur les prédictions du modèle.
     """
-    #cost_fp = 1
-    #cost_fn = 10
-    
+    # Prédiction vis à vis du seuil spécifique : 
     if y_prob.ndim == 2:
         y_prob = y_prob[:, 1]
     else:
@@ -248,13 +242,18 @@ def score_metier(y_true, y_prob, threshold):
         
     y_pred = (y_prob > threshold).astype(int)
     
+    # Calcul de la marice de confusion : 
+    cm = confusion_matrix(y_true, y_pred)
+    TP = cm[1, 1]
+    TN = cm [0, 0]
+    FP = cm[0, 1]
+    FN = cm [1, 0]
+    
     cm = confusion_matrix(y_true, y_pred)
     
-    cost = (10 * cm[1, 0] + cm[0, 1]) / (10 * cm[1, 0] + cm[0, 1] + cm[1, 1] + cm[0, 0])
+    score = (10 * FN + FP) / (10 * FN + FP + TP + TN)
 
-    #total_cost = cm[0, 1] * cost_fp + cm[1, 0] * cost_fn
-    
-    return cost
+    return score
 
 
 def custom_scoring(threshold):
