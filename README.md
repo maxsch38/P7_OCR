@@ -28,14 +28,11 @@ Les données sont issues de Kaggle et sont disponibles à l'adresse suivante : h
 Dans ce dépôt, vous trouverez :
 1. Le notebbok comprtant l'analyse exploratoire des données, la création de features engineering et la sélection de features : Notebook_1_analyse_exploratoire.ipynb
 2. Un script python pour l'automatisation de la préparation des données : data_preparation.py
-3. Le dossier contenant les scirpts python des fonctions utilisées dans les notebook : Fonctions/
+3. Le notebook d'entrainement, d'optimisation et de sélection de modèle : Notebook_2_modelisation.ipynb
+4. Le dossier contenant les scirpts python des fonctions utilisées dans les notebook : Fonctions/
 
 
 
-2. un fichier python nommé 'fct_data' : fichier contenant les fonctiond utilisées pour le notebook Analyse Exploratoire.
-3. un Notebook nommé : 2. P7 - Modélisation' : pour l'entrainement, l'optimisation des hyperparamètres et la sélection du modèle à retenir pour l'étude.
-4. un fichier python nommé 'fct_modelisation' : fichier contenant les fonctions utilisées pour le notebook Modélisation.
-5. un fichier python nommé 'data_preparation' : fichier contenant un script pour automatiser le trainement de l'ensemble des fichiers forunis la société.
 6. un dossier 'API' : contenant la configuration locale de l'API.
      - backend réalisé avec FastAPI.
      - frontend réalisé avec Streamlit.
