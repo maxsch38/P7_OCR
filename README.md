@@ -30,12 +30,13 @@ Dans ce dépôt, vous trouverez :
 2. Un script python pour l'automatisation de la préparation des données : data_preparation.py
 3. Le notebook d'entrainement, d'optimisation et de sélection de modèle : Notebook_2_modelisation.ipynb
 4. Le dossier contenant les scirpts python des fonctions utilisées dans les notebook : Fonctions/
+5 le dossier contenant la configuration locale de l'API : API/
+  - backend réalisé avec Fastapi
+  - frontend réalisé avec Streamlit 
+  - tests unitaire réalisé avec Pytest
 
 
-
-6. un dossier 'API' : contenant la configuration locale de l'API.
-     - backend réalisé avec FastAPI.
-     - frontend réalisé avec Streamlit.
+  
 7. un fichier python nommé 'DataDrift.py' : permettant d'établir le rapport html --> Data_Drift_Report entre deux fichier en .pickle
 8. Un PDF nommé 'Note Méthodologique' : rapport décrivant les différents points abordés dans ce projet.
 
